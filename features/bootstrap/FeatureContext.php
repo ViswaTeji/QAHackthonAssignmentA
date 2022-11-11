@@ -516,6 +516,16 @@ JS;
         $this->getSession()->getPage()->find('xpath',"$locator")->setValue($value);
     }
 
+    /**
+     * @Given /^I should get access denied for "([^"]*)"$/
+     */
+    public function iShouldGetAccessDenied($url)
+    {
+        $this->getSession()->visit($this->locatePath($url));
+        $this->assertSession()
+            ->elementTextContains('css', '.layout-container', 'Page not found');
+    }
+
 }
 
 
