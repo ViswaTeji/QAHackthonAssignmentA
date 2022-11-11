@@ -129,7 +129,7 @@ class FeatureContext extends RawDrupalContext {
             $this->waitForSecs(3);
             $page->find('css', 'input#edit-field-tags-target-id')->setValue($tags);
             $this->waitForSecs(3);
-            $page->find('xpath', "//summary[text()='URL alias']")->click();
+            $page->find('xpath', "//summary[text()='Alias de URL']")->click();
             $page->find('css', 'input#edit-path-0-alias')->setValue($urlalias);
             $this->waitForSecs(3);
             $state = $page->find('css', 'select#edit-moderation-state-0-state')->getValue();
