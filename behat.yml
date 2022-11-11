@@ -1,0 +1,57 @@
+default:
+  suites:
+    default:
+      #paths: ["%paths.base%/vendor/drupal/drupal-extension/features/bootstrap"]
+        #features: vendor/drupal/drupal-extension/features
+        #bootstrap: 'features/bootstrap'
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+
+        #- vendor\drupal\drupal-extension\features\bootstrap\FeatureContext
+
+    #default2:
+     # paths: ["%paths.base%/features"]
+     # contexts: ["%paths.base%/vendor/drupal/drupal-extension/features/bootstrap/FeatureContext"]
+
+  extensions:
+    Drupal\MinkExtension:
+      goutte: ~
+      selenium2:
+       browser: chrome
+       capabilities:
+        extra_capabilities:
+          chrome:
+          chromeOptions:
+            args:
+              - "--start-fullscreen"
+            w3c: false
+      browser_name: chrome
+      default_session: selenium2
+      base_url: https://my-drupal9-site.ddev.site/en
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      drupal:
+        drupal_root: '/Users/viswatejivundavalli/my-drupal9-site/web'
+      region_map:
+        footer: ".layout-footer"
+        header: ".layout-header"
+      selectors:
+       success_message_selector: '.messages.messages--status'
+       message_selector: '.messages--status'
+       error_message_selector: '.messages.messages--error'
+       warning_message_selector: '.messages.messages--warning'
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+{
+  "require": {
+    "drupal/drupal-extension": "^4.0",
+    "symfony/yaml": "^4.4",
+    "symfony/event-dispatcher": "^4.4",
+    "symfony/console": "^4.4"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "require-dev": {
+    "sensiolabs/behat-page-object-extension": "^2.0"
+  }
+}
