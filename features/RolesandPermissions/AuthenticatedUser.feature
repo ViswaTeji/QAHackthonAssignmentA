@@ -24,7 +24,6 @@ Feature:As an Authenticated user I
     And I should get access denied for "/en/admin/appearance"
     # Verify User does not have access to Modules
     Then I should get access denied for "/en/admin/modules"
-    And I should get access denied for "/en/admin/modules/install"
     #Verify User does not have access to Drupal Configs
     Then I should get access denied for "/en/admin/config"
     And I should get access denied for "/en/admin/config/development/performance"
